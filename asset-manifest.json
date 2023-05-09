@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.61d4324a.css",
+    "main.js": "/portfolio/static/js/main.73d234b3.js",
+    "static/media/gradpic.JPG": "/portfolio/static/media/gradpic.6b4c130aea56a50f2586.JPG",
+    "static/media/as3.png": "/portfolio/static/media/as3.a288effb7983b8541a9d.png",
+    "static/media/royce.PNG": "/portfolio/static/media/royce.25fce2cfb74b58261df2.PNG",
+    "index.html": "/portfolio/index.html",
+    "main.61d4324a.css.map": "/portfolio/static/css/main.61d4324a.css.map",
+    "main.73d234b3.js.map": "/portfolio/static/js/main.73d234b3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.61d4324a.css",
+    "static/js/main.73d234b3.js"
+  ]
+}
