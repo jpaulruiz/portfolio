@@ -1,0 +1,14 @@
+* {
+    font-family: 'Montserrat';
+    background-color: #18181a;
+    margin: 0;
+    padding: 0;
+}
+
+::after {
+    box-sizing: inherit;
+}
+
+h2, span, section, p {
+    background-color: transparent;
+}

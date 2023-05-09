@@ -1,0 +1,20 @@
+.about-me {
+    position: relative;
+    color: rgb(211, 208, 208);
+}
+
+.about-me::after {
+    content: "";
+    display: block;
+    position: relative;
+    top: -15px;
+    margin-left: 200px;
+    width: 200px;
+    border-top: 1px solid rgb(83, 83, 83);
+}
+
+section {
+    margin-top: 10px;
+    color: rgb(146, 144, 144);
+    line-height: 30px;
+}
