@@ -2,28 +2,30 @@ import styled from "styled-components"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import { useEffect, useRef } from "react";
 import Navbar from "./component/Navbar"
+import Footer from "./component/Footer"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Contacts from "./pages/Contacts"
+import royce from "./images/royce.PNG"
 
 import "./App.css"
-// import Test from "./Test"
 
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 `
 const CursorFollower = styled.div`
-    width: 100vw;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
     position: absolute;
-    padding: 0.5rem 1rem;
     font-size: 1.3rem;
     border: none;
     cursor: pointer;
     outline: none;
     overflow: hidden;
     z-index: 0;
+    width: 100vw;
+    height: 100vh;
 
     &:before {
         --size: 0;
@@ -49,6 +51,15 @@ const App = () => {
   const cursorGradientRef = useRef(null)
 
   useEffect(() => {
+    //icon & title
+    document.title = 'Royce';
+    const icon = document.querySelector('link[rel="icon"]') || document.createElement('link');
+    icon.rel = 'icon';
+    icon.type = 'image/png';
+    icon.href = royce;
+    document.head.appendChild(icon);
+
+    //cursor adjustment
     const cursorGradient = cursorGradientRef.current
     cursorGradient.addEventListener("mousemove",
         (e) => {
@@ -61,14 +72,15 @@ const App = () => {
   return (
       <Container>
         <BrowserRouter>
-          <Navbar/>
             <CursorFollower ref={cursorGradientRef}>
+              <Navbar/>
               <Routes>
                   <Route exact path="/" element={<Home/>}/>
                   <Route path="/about" element={<About/>}/>
                   <Route path="/contact" element={<Contacts/>}/>
                   <Route path="*" element={<Home/>}/>
               </Routes>
+              <Footer/>
             </CursorFollower>
         </BrowserRouter>
       </Container>

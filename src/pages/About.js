@@ -1,14 +1,12 @@
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faHtml5,faCss3Alt,faJs,faPhp,faReact,faGit,faSourcetree} from '@fortawesome/free-brands-svg-icons'
-import actionScript from "../images/as3.png"
+import { faHtml5,faCss3Alt,faJs,faPhp,faReact,faGit,faSourcetree } from '@fortawesome/free-brands-svg-icons'
+
 import "./About.css"
 
 const Container = styled.div`
     display: flex;
     flex-direction: row;
-    height: 100vh;
-    margin-left: 130px;
     `
 
 const AboutMe = styled.div`
@@ -16,8 +14,8 @@ const AboutMe = styled.div`
     flex-direction: column;
     flex: 1.4;
     position: relative;
-    padding-top: 100px;
-    padding-left: 30px;
+    margin-top: 8rem;
+    margin-left: 6.3rem;
     background-color: transparent;
     `
 
@@ -38,22 +36,14 @@ const FontAwesomeStyled = styled(FontAwesomeIcon)`
     padding: 4px;
     `
 
-const ImageHolder = styled.img`
-    color: #646464;
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    padding: 4px;
-    filter: grayscale(100%) brightness(20%);
-    `
 const About = () => {
     return ( 
         <Container>
             <AboutMe>
                 <h2 className="about-me">About Me</h2>
                 <section>
-                    <p style={{wordWrap: "break-word"}}>Hi! I'm Royce and I enjoy coding. I graduated in University of San Carlos
-                    in BS Computer Engineering. I started my professional experience in
+                    <p style={{wordWrap: "break-word"}}>Hi! I'm Royce and I enjoy coding. I graduated in BS Computer Engineering
+                    at University of San Carlos. I started my professional experience in
                     AWS (Advanced World Solutions) as OJT for 3 months. Then, I became Technical
                     Specialist II in ASI (Alliance Software Inc.) and stayed there for 2 years.
                     </p>
@@ -75,7 +65,6 @@ const About = () => {
                     <FontAwesomeStyled icon={faPhp}/>
                     <FontAwesomeStyled icon={faGit}/>
                     <FontAwesomeStyled icon={faSourcetree}/>
-                    {/* <ImageHolder src={actionScript}/> */}
                 </StackContainer>
             </AboutMe>
         </Container>

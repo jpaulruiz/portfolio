@@ -25,7 +25,7 @@ const Home = () => {
                         <img src={imageDisplay} className="image-ax"/>
                         <div className="image-bx"></div>
                     </div>
-                    <span style={{color: "#D81E5B", fontSize: "14px"}}>johnpaulmruiz@gmail.com</span> 
+                    <span style={{color: "#D81E5B", fontSize: "1rem"}}>johnpaulmruiz@gmail.com</span> 
                 </div>
             </div>
         </Container>
