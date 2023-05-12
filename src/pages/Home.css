@@ -18,7 +18,7 @@
     animation: textclip 2s linear infinite;
     display: inline-block;
     font-size: 7rem;
-    padding-left: 100px;
+    padding-left: 5rem;
     }
 
 @keyframes textclip {

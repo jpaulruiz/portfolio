@@ -3,6 +3,7 @@
     background-color: #18181a;
     margin: 0;
     padding: 0;
+    font-size: 16px;
 }
 
 ::after {
@@ -11,4 +12,8 @@
 
 h2, span, section, p {
     background-color: transparent;
+}
+
+h2 {
+    font-size: 2rem;
 }

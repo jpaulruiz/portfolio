@@ -1,31 +1,57 @@
 import styled from "styled-components"
+import { useEffect } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faHtml5,faCss3Alt,faJs,faPhp,faReact,faGit,faSourcetree } from '@fortawesome/free-brands-svg-icons'
+import { faHtml5,faCss3Alt,faJs,faPhp,faReact,faGit,faSourcetree,faFigma } from '@fortawesome/free-brands-svg-icons'
 
 import "./About.css"
 
 const Container = styled.div`
     display: flex;
     flex-direction: row;
+    justify-content: center;
+
+    @media only screen and (max-width: 1100px) {
+        flex-direction: column;
+        align-items: center;
+    }
     `
 
 const AboutMe = styled.div`
     display: flex;
     flex-direction: column;
-    flex: 1.4;
+    flex: 1;
     position: relative;
     margin-top: 8rem;
     margin-left: 6.3rem;
     background-color: transparent;
+
+    @media only screen and (min-width: 1400px) {
+        flex: none;
+        width: 600px;
+    }
+
+    @media only screen and (max-width: 1100px) {
+        flex: none;
+        font-size: 1rem;
+        width: 75vw;
+        margin-left: 0;
+
+        section {
+            line-height: 2rem;
+        }
+    }
     `
 
 const StackContainer = styled.div`
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    width: 400px;
-    height: 400px;
+    flex-wrap: wrap;
+    width: 75%;
     background-color: transparent;
+
+    @media only screen and (max-width: 1100px) {
+        margin-bottom: 4rem;
+    }
     `
 
 const FontAwesomeStyled = styled(FontAwesomeIcon)`
@@ -35,6 +61,17 @@ const FontAwesomeStyled = styled(FontAwesomeIcon)`
     background-color: transparent;
     padding: 4px;
     `
+
+const styledDiv = {
+    display: "flex",
+    alignItems: "center",
+    color: "#646464",
+    height: "50px",
+    backgroundColor: "transparent",
+    padding: "4px",
+    fontSize: "1.5rem",
+    fontWeight: "bold",
+}
 
 const About = () => {
     return ( 
@@ -55,8 +92,8 @@ const About = () => {
                     </p>
                 </section>
             </AboutMe>
-            <AboutMe style={{flex: "1.3"}}>
-                <h2 className="about-me">Tech-Stack</h2>
+            <AboutMe>
+                <h2 className="about-me">Tech Stack</h2>
                 <StackContainer>
                     <FontAwesomeStyled icon={faHtml5} />
                     <FontAwesomeStyled icon={faCss3Alt} />
@@ -65,6 +102,9 @@ const About = () => {
                     <FontAwesomeStyled icon={faPhp}/>
                     <FontAwesomeStyled icon={faGit}/>
                     <FontAwesomeStyled icon={faSourcetree}/>
+                    <FontAwesomeStyled icon={faFigma}/>
+                    <div style={styledDiv}>ActionScript3.0</div>
+                    <div style={styledDiv}>MySQL</div>
                 </StackContainer>
             </AboutMe>
         </Container>

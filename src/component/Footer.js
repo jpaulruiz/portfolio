@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { useEffect } from "react"
 import { faLinkedin,faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
@@ -28,6 +29,12 @@ const FooterDetail = styled.div`
         width: 10rem;
         border-top: 1px solid rgb(83, 83, 83);
     }
+
+    &::after {
+        content: "Designed in Figma. Built in Visual Studio Code with HTML, CSS, and ReactJS.";
+        font-size: 0.8rem;
+        padding-left: 4rem;
+    }
 `
 
 const FontAwesomeStyled = styled(FontAwesomeIcon)`
@@ -36,24 +43,40 @@ const FontAwesomeStyled = styled(FontAwesomeIcon)`
     height: 2rem;
     padding-left: 0.4rem;
     background-color: transparent;
+
+    &:hover {
+        color: #D81E5B;
+    }
     `
 
+const LinkStyled = styled.a`
+    background-color: transparent;
+`
+
 const Footer = () => {
-    const imageStyle = {
-        backgroundColor: "transparent"
-    }
+
+    useEffect(() => {
+        const getLinks = Array.from(document.querySelectorAll('a'))
+        if (getLinks.length > 0) {
+            getLinks.forEach( (link) => {
+                    if (link.host !== window.location.host) {
+                        link.setAttribute('target','_blank')
+                        link.setAttribute('rel','noopener noreferrer')
+                    }
+                }
+            )
+        }
+    },[])
 
     return ( 
         <Container>
             <FooterDetail>
-                {/* <FontAwesomeStyled icon={faLinkedin} />
-                <FontAwesomeStyled icon={faGithub} /> */}
-                <a href="https://www.linkedin.com/in/john-paul-ruiz-5310bb127/" target="_blank" rel="noopener noreferrer" style={imageStyle}>
+                <LinkStyled href="https://www.linkedin.com/in/john-paul-ruiz-5310bb127/">
                     <FontAwesomeStyled icon={faLinkedin} />
-                </a>
-                <a href="https://github.com/jpaulruiz" target="_blank" rel="noopener noreferrer" style={imageStyle}>
+                </LinkStyled>
+                <LinkStyled href="https://github.com/jpaulruiz">
                     <FontAwesomeStyled icon={faGithub} />
-                </a>
+                </LinkStyled>
             </FooterDetail>
         </Container>
     );

@@ -5,6 +5,7 @@ import Navbar from "./component/Navbar"
 import Footer from "./component/Footer"
 import Home from "./pages/Home"
 import About from "./pages/About"
+import Experience from "./pages/Experience";
 import Contacts from "./pages/Contacts"
 import royce from "./images/royce.PNG"
 
@@ -42,8 +43,12 @@ const CursorFollower = styled.div`
 
     &:hover {
         &:before {
-            --size: 1000px;
+            --size: 75vw;
         }
+    }
+
+    @media only screen and (max-width: 1090px) {
+      overflow: scroll;
     }
     `
 
@@ -52,12 +57,12 @@ const App = () => {
 
   useEffect(() => {
     //icon & title
-    document.title = 'Royce';
-    const icon = document.querySelector('link[rel="icon"]') || document.createElement('link');
-    icon.rel = 'icon';
-    icon.type = 'image/png';
-    icon.href = royce;
-    document.head.appendChild(icon);
+    document.title = 'Royce | Software Developer'
+    const icon = document.querySelector('link[rel="icon"]') || document.createElement('link')
+    icon.rel = 'icon'
+    icon.type = 'image/png'
+    icon.href = royce
+    document.head.appendChild(icon)
 
     //cursor adjustment
     const cursorGradient = cursorGradientRef.current
@@ -77,6 +82,7 @@ const App = () => {
               <Routes>
                   <Route exact path="/" element={<Home/>}/>
                   <Route path="/about" element={<About/>}/>
+                  <Route path="/experience" element={<Experience/>}/>
                   <Route path="/contact" element={<Contacts/>}/>
                   <Route path="*" element={<Home/>}/>
               </Routes>

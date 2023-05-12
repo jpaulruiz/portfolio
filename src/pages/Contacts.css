@@ -1,0 +1,112 @@
+.contact-layout {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 80%;
+    margin-top: 6rem;
+    margin-left: 6.3rem;
+    background-color: transparent;
+    position: relative;
+    color: rgb(211, 208, 208);
+    flex: 1;
+    align-items: center;
+}
+
+.contact-greeting {
+    font-size: 10rem;
+    font-weight: bolder;
+}
+
+.contact-message, .contact-email {
+    margin-left: 1rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    width: 24rem;
+}
+
+.contact-email {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contact-mailbox {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: transparent;
+    margin-left: 1rem;
+}
+
+.contact-mailbox h1,
+.contact-mailbox form,
+.contact-mailbox label,
+.contact-mailbox input,
+.contact-mailbox textarea {
+    background-color: inherit;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    align-items: stretch;
+}
+
+.contact-mailbox form,
+.contact-mailbox p,
+.contact-mailbox label {
+    font-weight: bold;
+}
+
+.contact-form div,
+.contact-form button {
+    background-color: inherit;
+    margin-top: 0.2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    background-color: inherit;
+    border-width: 0;
+    resize: none;
+    background-color: #2B2B2D;
+    padding-left: 0.5rem;
+    color:rgb(211, 208, 208);
+    box-sizing: border-box;
+    font-weight: bold;
+    font-size: 0.8rem;
+    height: 2rem;
+    width: 20rem;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: rgb(211, 208, 208);
+    font-size: 0.8rem;
+    font-weight: 100;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    transition: border-left 0.15s ease-out;
+    border-left: 0.2rem solid white;
+}
+
+.contact-form button {
+    width: 20rem;
+    border: none;
+    background-color: #D81E5B;
+    font-weight: bold;
+    color: white;
+}
+
+.contact-layout span {
+    text-align: center;
+}
+
+@media only screen and (max-width: 950px) {
+    .contact-layout {
+        margin-left: 0;
+    }
+}

@@ -1,6 +1,6 @@
 import styled from "styled-components"
-import { Link } from "react-router-dom"
-import { useState } from "react";
+import { Link, useLocation } from "react-router-dom"
+import { useState, useEffect  } from "react";
 
 const Container = styled.div`
     background-color: #131315;
@@ -14,7 +14,7 @@ const Container = styled.div`
     background-color: transparent;
 `
 
-const StyledLink = styled(Link)(({ active }) => `
+const StyledLink = styled(Link)`
     color: rgb(122, 115, 115);
     background-color: transparent;
     font-size: 1.2rem;
@@ -32,22 +32,47 @@ const StyledLink = styled(Link)(({ active }) => `
         font-weight: bold;
     }
 
-    ${ active ? `
-        color: #D81E5B;
-        font-size: 1.5rem;
-        font-weight: bold;
-    ` : ''}
-`)
+    ${({active}) => {
+        return (
+            active ? `color: #D81E5B;
+                font-size: 1.5rem;
+                font-weight: bold;` : '')
+    }}
+
+    @media only screen and (max-width: 950px) {
+        padding: 5px;
+        font-size: 1.1rem;
+
+        &:hover {
+            color: #D81E5B;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        ${({active}) => {
+            return (
+                active ? `color: #D81E5B;
+                    font-size: 1.3rem;
+                    font-weight: bold;` : '')
+        }}
+    }
+`
 
 
 const Navbar = () => {
-    
-    const [activeLink, setActiveLink] = useState("/")
+
+    const [activeLink, setActiveLink] = useState("")
+    const location = useLocation()
+
+    useEffect ( () => {
+        setActiveLink(location.pathname)
+    }, [activeLink])
 
     return ( 
         <Container>
             <StyledLink to="/" active={activeLink === "/"} onClick={() => setActiveLink("/")}>Home</StyledLink>
             <StyledLink to="/about" active={activeLink === "/about"} onClick={() => setActiveLink("/about")}>About</StyledLink>
+            <StyledLink to="/experience" active={activeLink === "/experience"} onClick={() => setActiveLink("/experience")}>Experience</StyledLink>
             <StyledLink to="/contact" active={activeLink === "/contact"} onClick={() => setActiveLink("/contact")}>Contact</StyledLink>
         </Container>
      );
