@@ -97,7 +97,7 @@
     height: 300px;
     border-radius: 50%;
     transition: transform 1s ease;
-    filter: grayscale(75%);
+    filter: grayscale(40%);
 }
 
 .image-bx {

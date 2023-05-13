@@ -1,0 +1,53 @@
+.tab-choices, .tab-panel {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 8rem;
+    margin-left: 6.3rem;
+}
+
+.tab-choices {
+    background-color: transparent;
+}
+
+.tab-panel {
+    width: 40rem;
+    margin-left: 4rem;
+    margin-bottom: 1rem;
+}
+
+.tab-panel li {
+    font-size: 0.8rem;
+}
+
+.tab-panel div,
+.tab-panel ul,
+.tab-panel li,
+.tab-panel span {
+    background-color: inherit;
+}
+
+.tab-panel li, .tab-panel ul{
+    padding-left: 0.8rem;
+}
+
+.tab-choices button {
+    padding: 0.4rem;
+    padding-left: 0.8rem;
+    text-align: left;
+    border: none;
+    color: rgb(146, 144, 144);
+    background-color: inherit;
+    border-left: 2px solid rgb(110, 110, 110);
+}
+
+.tab-choices button:hover {
+    color: white;
+    background-color: #2B2B2D;
+}
+
+@media only screen and (max-width: 950px) {
+    .tab-choices, .tab-panel {
+        width: 75vw;
+    }
+}
