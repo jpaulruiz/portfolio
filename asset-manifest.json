@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.9eb1d54a.css",
-    "main.js": "/static/js/main.73ce5223.js",
+    "main.js": "/static/js/main.80df438b.js",
     "static/media/gradpic.JPG": "/static/media/gradpic.6b4c130aea56a50f2586.JPG",
     "static/media/royce.PNG": "/static/media/royce.5472c8c63b57ccb2ef2c.PNG",
     "index.html": "/index.html",
     "main.9eb1d54a.css.map": "/static/css/main.9eb1d54a.css.map",
-    "main.73ce5223.js.map": "/static/js/main.73ce5223.js.map"
+    "main.80df438b.js.map": "/static/js/main.80df438b.js.map"
   },
   "entrypoints": [
     "static/css/main.9eb1d54a.css",
-    "static/js/main.73ce5223.js"
+    "static/js/main.80df438b.js"
   ]
 }
