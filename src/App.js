@@ -39,18 +39,34 @@ const CursorFollower = styled.div`
         background: radial-gradient(circle closest-side, rgb(43, 41, 41), transparent 80%);
         transform: translate(-50%, -50%);
         transition: width 0.2s ease, height 0.2s ease;
+        // animation: pulse 1s infinite;
     }
 
     &:hover {
         &:before {
-            --size: 75vw;
+            --size: 90vw;
         }
+    }
+
+    @keyframes pulse {
+      0% {
+          transform: translate(-50%, -50%) scale(0.1);
+          background: radial-gradient(circle closest-side, rgb(43, 41, 41), transparent 80%);
+      }
+      50% {
+          transform: translate(-50%, -50%) scale(1);
+          background: radial-gradient(circle closest-side, rgb(43, 41, 41), transparent 80%);
+      }
+      100% {
+          transform: translate(-50%, -50%) scale(0.1);
+          background: radial-gradient(circle closest-side, rgb(43, 41, 41), transparent 80%);
+      }
     }
 
     @media only screen and (max-width: 1090px) {
       overflow: scroll;
     }
-    `
+`
 
 const App = () => {
   const cursorGradientRef = useRef(null)

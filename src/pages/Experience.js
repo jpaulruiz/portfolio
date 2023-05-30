@@ -18,13 +18,15 @@ const Container = styled.div`
 
 const companyName = [
     "Alliance Software Inc.",
-    "Advanced World Solution Inc."
+    "Advanced World Solution Inc.",
+    "Freelance Job"
 ]
 
 const companyDetail = [
     {
       title: "Lead Maintenance Engineer",
       duration: "April 2021 - April 2023",
+      language: "(ActionScript3.0, ReactJS, PHP, CSS)",
       description: [
         "Worked on enterprise retail system. A web-based POS application using SaaS architecture.",
         {
@@ -37,19 +39,31 @@ const companyDetail = [
             "Developed custom reports according to business requirements.",
           ],
         },
+        "Collaborate with L2 Support and system admin for escalated issues.",
         "Investigate or troubleshoot to determine the root cause of application and data issue.",
         "Refactored system logical operations to optimize application processes in POS.",
         "Optimized SQL queries to prevent heavy consumption of server's resources.",
+        "Performed code reviews and provided consultations to junior developers."
       ],
     },
     {
       title: "On-the-job Trainee",
       duration: "June - August 2019",
+      language: "(C++)",
       description: [
         "Worked along with Research & Development developers with the task to do unit testing on their deliverables.",
         "Created software documentation for unit testing.",
       ],
     },
+    {
+      title: "Westwood Publishing - FE Developer",
+      duration: "2023",
+      language: "(ReactJS, GatsbyJS, CSS, HTML)",
+      description: [
+        "Developed dynamic services webpage for interactive interface.",
+        "Developed bookstore webpage for displaying collection and available books."
+      ],
+    }
   ]
 
 const handleClick = (e) => {
@@ -89,11 +103,11 @@ const setCompany = () => {
     })
 }
 
-const setDetailJSX = ({title, duration, description},i) => {
+const setDetailJSX = ({title, duration, description, language},i) => {
     return (
         <div id={"panel-"+i} hidden={true}>
             <h2>{title}</h2>
-            <span>{duration}</span>
+            <span>{duration}</span> <span style={{fontSize:"0.8rem"}}>{language}</span>
             <ul>
                 {description.map((desc) =>
                     typeof desc === "object" ? (
